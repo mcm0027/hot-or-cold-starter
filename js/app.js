@@ -20,7 +20,7 @@ function newGame() {
 function guessResponse(guess){
 	if (numGuesses === 1) {
 		if (guess == randomNum) {
-			alert("You win!");
+		   	$(".win").fadeIn(1000);
 			newGame();
 		} else if ((guess >= randomNum + 50) || (guess <= randomNum - 50)) {
 			$("#feedback").text("You are ice cold!");
@@ -35,7 +35,7 @@ function guessResponse(guess){
 		}
 	} else {
 		if (guess == randomNum) {
-			alert("You win!");
+			$(".win").fadeIn(1000);
 			newGame();
 		} else if (oldDiff > diffGuess) {
 			$("#feedback").text("You are getting warmer!");
@@ -93,6 +93,7 @@ $(document).ready(function(){
   	/*--- Hide information modal box ---*/
   	$("a.close").click(function(){
   		$(".overlay").fadeOut(1000);
+  		$(".win").fadeOut(1000);
   	});
 
 });

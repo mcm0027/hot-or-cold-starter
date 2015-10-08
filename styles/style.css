@@ -100,6 +100,27 @@ h1 {
 	display: none;
 }
 
+.win {
+	width: 60%;
+	height: 60%;
+	color: #fff;
+	background: #e74c3c;
+	position: absolute;
+	top: 25%;
+	left: 20%;
+	margin: 0;
+	z-index: 1000;
+	display: none;
+}
+
+.winText {
+	padding: 130px 0;
+}
+
+#winContent {
+	width: 300px;
+}
+
 .content {
 	color: #fff;
 	background: #e74c3c;
