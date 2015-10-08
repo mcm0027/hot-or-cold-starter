@@ -175,7 +175,8 @@ h1 {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	margin: 0 auto;
+	margin:50px auto;
+	display: inline-block;
 
 	box-shadow: rgb(26, 31, 52) 1px 1px,
     rgb(26, 31, 52) 2px 2px,
@@ -294,6 +295,10 @@ input:focus {
 
 :-ms-input-placeholder {  
    color: #95a5a6; 
+}
+
+.footer h2 {
+	padding: .5em 0;
 }
 
 ul.guessBox {
