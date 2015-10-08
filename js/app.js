@@ -20,7 +20,9 @@ function newGame() {
 function guessResponse(guess){
 	if (numGuesses === 1) {
 		if (guess == randomNum) {
-		   	$(".win").fadeIn(1000);
+		 	$(".win").fadeIn(1000);
+		 	$(".moreTries").hide();
+		 	$(".oneTry").fadeIn(1000);
 			newGame();
 		} else if ((guess >= randomNum + 50) || (guess <= randomNum - 50)) {
 			$("#feedback").text("You are ice cold!");
@@ -36,6 +38,9 @@ function guessResponse(guess){
 	} else {
 		if (guess == randomNum) {
 			$(".win").fadeIn(1000);
+			$(".oneTry").hide();
+			$(".moreTries").fadeIn(1000);
+			$("#winNum").text(numGuesses);
 			newGame();
 		} else if (oldDiff > diffGuess) {
 			$("#feedback").text("You are getting warmer!");
@@ -64,11 +69,11 @@ $(document).ready(function(){
 		noNum = isNaN(parseFloat(trueInt));
 		noDec = guess % 1;
 		if (noNum) {
-			alert("That wasn't a number!");
+			$("#feedback").text("That wasn't a number!");
 		} else if (noDec != 0) {
-			alert('Please enter a whole number (i.e. "10" not "10.5")');
+			$("#feedback").text('Please enter a whole number (i.e. "10" not "10.5").');
 		} else if ((guess <=0) || (guess > 100)) {
-			alert("Please enter a number between 1 and 100");
+			$("#feedback").text("Please enter a number between 1 and 100.");
 		} else {
 		$("#guessList").append("<li>" + guess + 
 			"</li>");
